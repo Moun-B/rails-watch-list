@@ -5,3 +5,28 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+
+require 'open-uri'
+puts "destroying everything"
+Movie.destroy_all
+List.destroy_all
+
+puts "parsing the API..."
+# the Le Wagon copy of the API
+url = 'http://tmdb.lewagon.com/movie/top_rated'
+response = JSON.parse(URI.open(url).read)
+
+puts "Creating the movies..."
+response['results'].each do |movie_hash|
+  puts
+  p movie_hash
+  Movie.create!(
+    poster_url: "https://image.tmdb.org/t/p/w500" + movie_hash['poster_path'],
+    title: movie_hash['original_title'],
+    overview: movie_hash['overview'],
+    rating: movie_hash['vote_average']
+  )
+end
+
+puts "Finished ! Created #{Movie.count} movies"
