@@ -1,0 +1,21 @@
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://variety.com/wp-content/uploads/2020/12/Independent-Movies-in-2020-Indie-Spirits.jpg?w=1360&h=765&crop=1);">
+  <div class="container">
+    <h1><%= @list.name %></h1>
+  </div>
+</div>
+<% @bookmarks.each do |bookmark| %>
+<div class="container">
+  <div class="card-product">
+    <img src=<%=bookmark.movie.poster_url%>>
+    <div class="card-product-infos">
+      <h2><%= bookmark.movie.title %></h2>
+      <p><%= bookmark.comment %></p>
+      <%= link_to bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Delete #{bookmark.movie.title}?" } do %>
+        <i class="fa-solid fa-circle-minus"></i>
+      <% end %>
+    </div>
+  </div>
+</div>
+<% end %>
+<%= link_to "Create a Bookmark", new_list_bookmark_path(@list) %>

@@ -12,6 +12,9 @@ puts "destroying everything"
 Movie.destroy_all
 List.destroy_all
 
+List.create!(
+  name: "Hihi"
+)
 puts "parsing the API..."
 # the Le Wagon copy of the API
 url = 'http://tmdb.lewagon.com/movie/top_rated'
