@@ -18,4 +18,23 @@
   </div>
 </div>
 <% end %>
+<% @reviews.each do |review| %>
+<div class="container">
+  <div class="card-product">
+    <img src="https://media.istockphoto.com/vectors/default-profile-picture-avatar-photo-placeholder-vector-illustration-vector-id1223671392?k=20&m=1223671392&s=170667a&w=0&h=kEAA35Eaz8k8A3qAGkuY8OZxpfvn9653gDjQwDHZGPE=">
+    <div class="card-product-infos">
+      <h2><%= review.rating %></h2>
+      <p><%= review.comment %></p>
+      <%= link_to review_path(review), data: { turbo_method: :delete, turbo_confirm: "Delete this comment ?" } do %>
+        <i class="fa-solid fa-circle-minus"></i>
+      <% end %>
+    </div>
+  </div>
+</div>
+<% end %>
+<%= simple_form_for [@list, @review] do |f| %>
+  <%= f.input :comment %>
+  <%= f.input :rating %>
+  <%= f.submit %>
+<% end %>
 <%= link_to "Create a Bookmark", new_list_bookmark_path(@list) %>
