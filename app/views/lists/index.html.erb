@@ -7,7 +7,7 @@
   <div class="container">
     <div class="cards">
       <% @lists.each do |list| %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<% list.photo.attached? ? cl_image_tag(list.photo.key) : "https://s3-us-west-2.amazonaws.com/prd-rteditorial/wp-content/uploads/2018/03/13153742/RT_300EssentialMovies_700X250.jpg"%>)">
           <%= link_to list.name, list_path(list) %>
         </div>
       <% end %>
