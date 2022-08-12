@@ -1,0 +1,73 @@
+.card-different {
+  margin-top: 32px;
+  display: block;
+  color: initial;
+  text-decoration: none;
+  width: 300px;
+  height: 140px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 35px 80px rgba(0,0,0,0.15);
+  transition: 0.5s;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+.card-different:hover {
+  height: 350px;
+}
+.card-image-different {
+  display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	top: -40px;
+	background: transparent;
+	height: 120px;
+	width: 120px;
+	border-radius: 10px;
+	transition: 0.5s;
+	box-shadow: 0 35px 80px rgba(0,0,0,0.15);
+	overflow: hidden;
+}
+.card-different:hover .card-image-different {
+	height: 190px;
+	width: 190px;
+  top: -20px;
+	transform: translateX(-50%) rotate(10deg);
+}
+.card-image-different img {
+  width: 100%;
+  border-radius: 6px;
+}
+.card-content-different {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+.card-text-different {
+	padding: 45px;
+	text-align: center;
+	width: 100%;
+  transition: 0.5s;
+  transform: translateY(100px);
+}
+.card-different:hover .card-text-different {
+	transform: none;
+}
+.card-title-different {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.card-sentence-different {
+  font-size: 12px;
+  opacity: 0.7;
+  padding: 15px 0;
+}

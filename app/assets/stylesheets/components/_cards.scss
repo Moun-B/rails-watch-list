@@ -23,7 +23,7 @@
 .card-product {
   overflow: hidden;
   height: 120px;
-  background: white;
+  background: #0D1321;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
@@ -40,6 +40,7 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  color: white;
 }
 
 .card-product p {
@@ -48,10 +49,16 @@
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
+  color: white;
 }
 
 .card-product .card-product-infos {
   padding: 16px;
+}
+
+.red {
+  color: #2B0504;
+  margin-top: 16px;
 }
 
 // Smallest device

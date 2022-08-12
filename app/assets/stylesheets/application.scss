@@ -10,8 +10,10 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "pages/show";
 @import "components/banner";
 @import "components/cards";
+@import "components/footer";
 
 body {
   background-color: #2B0504;

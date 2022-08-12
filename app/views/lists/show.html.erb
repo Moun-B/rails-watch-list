@@ -4,29 +4,40 @@
     <h1><%= @list.name %></h1>
   </div>
 </div>
-<% @bookmarks.each do |bookmark| %>
 <div class="container">
-  <div class="card-product">
-    <img src=<%=bookmark.movie.poster_url%>>
-    <div class="card-product-infos">
-      <h2><%= bookmark.movie.title %></h2>
-      <p><%= bookmark.comment %></p>
-      <%= link_to bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Delete #{bookmark.movie.title}?" } do %>
-        <i class="fa-solid fa-circle-minus"></i>
-      <% end %>
+<div class="cards">
+  <% @bookmarks.each do |bookmark| %>
+    <div class="card-different">
+      <div class="card-image-different">
+        <img src=<%=bookmark.movie.poster_url%>>
+      </div>
+      <div class="card-content-different">
+        <div class="card-text-different">
+          <div class="card-title-different">
+            <%= bookmark.movie.title %>
+          </div>
+          <div class="card-sentence-different">
+            <%= bookmark.comment %>
+          </div>
+          <%= link_to bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Delete #{bookmark.movie.title}?" } do %>
+            <i class="fa-solid fa-circle-minus"></i>
+          <% end %>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 <% end %>
+</div>
+</div>
+
 <% @reviews.each do |review| %>
 <div class="container">
   <div class="card-product">
     <img src="https://media.istockphoto.com/vectors/default-profile-picture-avatar-photo-placeholder-vector-illustration-vector-id1223671392?k=20&m=1223671392&s=170667a&w=0&h=kEAA35Eaz8k8A3qAGkuY8OZxpfvn9653gDjQwDHZGPE=">
     <div class="card-product-infos">
-      <h2><%= review.rating %></h2>
+      <h2><%= "⭐" * review.rating %></h2>
       <p><%= review.comment %></p>
       <%= link_to review_path(review), data: { turbo_method: :delete, turbo_confirm: "Delete this comment ?" } do %>
-        <i class="fa-solid fa-circle-minus"></i>
+        <i class="fa-solid fa-circle-minus red"></i>
       <% end %>
     </div>
   </div>
