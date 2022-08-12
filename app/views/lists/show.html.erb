@@ -20,7 +20,7 @@
             <%= bookmark.comment %>
           </div>
           <%= link_to bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Delete #{bookmark.movie.title}?" } do %>
-            <i class="fa-solid fa-circle-minus"></i>
+            <i class="fa-solid fa-circle-minus red-one"></i>
           <% end %>
         </div>
       </div>
